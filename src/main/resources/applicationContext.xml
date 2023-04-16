@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<beans>
+    <bean id="ScriptService" class="com.scriptServer.script.service.impl.ScriptServiceImpl"/>
+    <bean id="script" class="com.scriptServer.myspringmvc.controllers.ScriptController">
+        <!--    name是一会需要实例类的属性名    ref中的值是某一个 bean的 id-->
+        <property name="ScriptService" ref="ScriptService"/>
+    </bean>
+</beans>
