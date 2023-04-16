@@ -1,14 +1,14 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="servletDemo:war">
+  <artifact type="war" name="scriptServer:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
-        <module>servletDemo</module>
+        <module>scriptServer</module>
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="scriptServer-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="servletDemo:war exploded" />
+    <root id="archive" name="scriptServer-1.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="scriptServer:war exploded" />
     </root>
   </artifact>
 </component>

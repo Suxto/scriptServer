@@ -1,4 +1,4 @@
-package com.servletdemo.myspringmvc.io;
+package com.scriptServer.myspringmvc.io;
 
 public interface BeanFactory {
     Object getBean(String id);

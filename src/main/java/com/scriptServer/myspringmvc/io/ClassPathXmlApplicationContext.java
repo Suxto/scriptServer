@@ -1,4 +1,4 @@
-package com.servletdemo.myspringmvc.io;
+package com.scriptServer.myspringmvc.io;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -66,6 +66,7 @@ public class ClassPathXmlApplicationContext implements BeanFactory {
                     }
                 }
             }
+//            beanMap.forEach((k,v) -> System.out.println(k+" "+v));
         } catch (Exception e) {
             e.printStackTrace();
         }

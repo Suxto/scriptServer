@@ -1,8 +1,4 @@
-package com.servletdemo.script.service;
-
-import com.servletdemo.script.bean.Script;
-
-import java.util.List;
+package com.scriptServer.script.service;
 
 public interface ScriptService {
 //    List<Script> getUserList(String keyword, String pageNo);

@@ -1,4 +1,4 @@
-package com.servletdemo.utils;
+package com.scriptServer.utils;
 
 public class Tools {
     public static boolean isEmpty(String str) {
