@@ -53,7 +53,6 @@ public class DispatcherServlet extends HttpServlet {
                         if ("session".equals(parameterName)) {
                             parameterValues[i] = req.getSession();
                         } else {
-
                             String parameterValue = req.getParameter(parameterName);
                             parameterValues[i] = parameterValue;
                         }
@@ -67,6 +66,7 @@ public class DispatcherServlet extends HttpServlet {
 //                        resp.sendRedirect(newDirection);
 //                    } else {
                     Writer writer = resp.getWriter();
+                    if (Tools.isEmpty(returnStr)) return;
                     writer.write(returnStr);
                     writer.flush();
 //                        super.processTemplate(returnStr, req, resp);

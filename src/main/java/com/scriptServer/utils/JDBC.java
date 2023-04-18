@@ -32,14 +32,12 @@ public class JDBC {
     //关闭 连接 & statement
     public static void closeResource(Connection conn, Statement ps) {
         try {
-            if (ps != null)
-                ps.close();
+            if (ps != null) ps.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
         try {
-            if (ps != null)
-                conn.close();
+            if (ps != null) conn.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -48,8 +46,7 @@ public class JDBC {
     public static void closeResource(Connection conn, Statement ps, ResultSet rs) {
         closeResource(conn, ps);
         try {
-            if (rs != null)
-                rs.close();
+            if (rs != null) rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -113,7 +110,7 @@ public class JDBC {
     }
 
     public static <T> T getInstance(Class<T> clazz, ResultSet rs, Constructor<T> con) {
-        T t ;
+        T t;
         ResultSetMetaData metaData;
         try {
             t = con.newInstance();
@@ -172,6 +169,23 @@ public class JDBC {
             //5.关闭资源
             JDBC.closeResource(conn, ps);
         }
+    }
+
+    public static ResultSet getResultSet(String sql, Object... args) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            conn = JDBC.getConnection();
+            ps = conn.prepareStatement(sql);
+            for (int i = 0; i < args.length; i++) {
+                ps.setObject(i + 1, args[i]);
+            }
+            rs = ps.executeQuery();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return rs;
     }
 
 }
