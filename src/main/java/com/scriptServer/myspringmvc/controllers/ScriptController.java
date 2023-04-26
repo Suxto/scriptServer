@@ -41,9 +41,9 @@ public class ScriptController {
 //        return jsonObject;
     }
 
-    private String getAuthorScripts(String author) {
+    private String getAuthorScripts(String title,String author) {
 //        scriptService = new ScriptServiceImpl();
-        List<Script> list = scriptService.getScripts(null, author);
+        List<Script> list = scriptService.getScripts(title, author);
         JSONArray jsonArray = new JSONArray(list);
 //        System.out.println(jsonArray);
 //        return null;
@@ -76,9 +76,9 @@ public class ScriptController {
     }
 
 
-    public static void main(String[] args) {
-        ScriptController scriptController = new ScriptController();
-//        System.out.println(scriptController.getAuthorScripts("okSpD5JBx8QC1KNP6KUkE5OBYayA"));
-        System.out.println(scriptController.getContents("missions", "1"));
-    }
+//    public static void main(String[] args) {
+//        ScriptController scriptController = new ScriptController();
+////        System.out.println(scriptController.getAuthorScripts("okSpD5JBx8QC1KNP6KUkE5OBYayA"));
+//        System.out.println(scriptController.getContents("missions", "1"));
+//    }
 }

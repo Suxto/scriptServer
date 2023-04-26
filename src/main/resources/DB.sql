@@ -29,5 +29,3 @@ CREATE TABLE contents
     places TEXT,
     FOREIGN KEY (id) REFERENCES scripts (id)
 )
-
-
